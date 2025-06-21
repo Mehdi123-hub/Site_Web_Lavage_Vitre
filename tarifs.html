@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tarifs - VitroPro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">VitroPro</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- CONTENU -->
+  <section class="services">
+    <div class="container">
+      <h2>Nos Tarifs</h2>
+      <p>Voici un aperçu de nos tarifs. Contactez-nous pour un devis personnalisé.</p>
+
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <h3>Maison individuelle</h3>
+          <p>À partir de 40€</p>
+        </div>
+        <div class="card">
+          <h3>Appartement</h3>
+          <p>À partir de 30€</p>
+        </div>
+        <div class="card">
+          <h3>Commerces & bureaux</h3>
+          <p>Sur devis</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 2rem;">
+        Tous nos tarifs incluent le déplacement et l’utilisation de produits professionnels respectueux de l’environnement.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 VitroPro - Tous droits réservés</p>
+  </footer>
+
+  <!-- MENU SCRIPT -->
+  <script>
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+      burger.classList.toggle("toggle");
+    });
+  </script>
+</body>
+</html>

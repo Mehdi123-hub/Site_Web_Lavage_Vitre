@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À propos - VitroPro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">VitroPro</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- CONTENU -->
+  <section class="services">
+    <div class="container">
+      <h2>À propos de VitroPro</h2>
+      <p>
+        VitroPro est une entreprise familiale spécialisée dans le lavage de vitres depuis plus de 10 ans.
+        Nous intervenons à Laval et dans ses environs pour offrir un service de qualité, que ce soit pour
+        les particuliers ou les professionnels.
+      </p>
+      <br />
+      <p>
+        Notre équipe expérimentée utilise des techniques efficaces et du matériel professionnel pour garantir un
+        résultat impeccable. La satisfaction client est notre priorité absolue.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 VitroPro - Tous droits réservés</p>
+  </footer>
+
+  <!-- MENU SCRIPT -->
+  <script>
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+      burger.classList.toggle("toggle");
+    });
+  </script>
+</body>
+</html>
