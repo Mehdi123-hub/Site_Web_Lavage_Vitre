@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VitroPro – Lavage de vitres</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitroPro - Nettoyage de Vitres</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <header>
-    <h1>VitroPro</h1>
-    <p>Professionnels du lavage de vitres à domicile</p>
-    <a href="#contact" class="btn">Demander un devis</a>
+  <header class="hero">
+    <div class="container">
+      <h1>VitroPro</h1>
+      <p>Le spécialiste du lavage de vitres à Laval et alentours</p>
+      <a href="#contact" class="btn">Demander un devis</a>
+    </div>
   </header>
 
   <section class="services">
-    <h2>Nos services</h2>
-    <ul>
-      <li>✔️ Lavage de vitres intérieures et extérieures</li>
-      <li>✔️ Entretien de vitrines de magasins</li>
-      <li>✔️ Intervention sur immeubles et vérandas</li>
-      <li>✔️ Produits écologiques et sans traces</li>
-    </ul>
+    <div class="container">
+      <h2>Nos Services</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-building"></i>
+          <h3>Immeubles & Vitrines</h3>
+          <p>Nettoyage extérieur et intérieur de bâtiments, vitrines de commerces, bureaux.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-home"></i>
+          <h3>Particuliers</h3>
+          <p>Service à domicile pour vos fenêtres, vérandas, baies vitrées...</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-leaf"></i>
+          <h3>Produits Écologiques</h3>
+          <p>Utilisation de produits respectueux de l’environnement et sans traces.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="zone">
-    <h2>Zones d'intervention</h2>
-    <p>Nous intervenons dans toute la région de Laval et ses alentours (53).</p>
+    <div class="container">
+      <h2>Zone d’intervention</h2>
+      <p>Nous intervenons sur Laval, Mayenne, Ernée, Bonchamp, Saint-Berthevin et alentours.</p>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=laval,france&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
   </section>
 
   <section class="contact" id="contact">
-    <h2>Contactez-nous</h2>
-    <form action="https://formsubmit.co/tonadresse@email.com" method="POST">
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre e-mail" required>
-      <textarea name="message" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
+    <div class="container">
+      <h2>Contactez-nous</h2>
+      <form action="https://formsubmit.co/tonadresse@email.com" method="POST">
+        <input type="text" name="name" placeholder="Votre nom" required />
+        <input type="email" name="email" placeholder="Votre e-mail" required />
+        <textarea name="message" placeholder="Votre message" required></textarea>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 VitroPro – Tous droits réservés</p>
+    <p>&copy; 2025 VitroPro - Tous droits réservés</p>
   </footer>
 
 </body>
