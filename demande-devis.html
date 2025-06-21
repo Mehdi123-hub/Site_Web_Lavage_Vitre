@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitroPro - Demande de devis</title>
+  <meta name="description" content="Demandez un devis personnalisé pour le nettoyage de vos vitres avec VitroPro." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVIGATION identique à la page principale -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="logo" aria-current="page">VitroPro</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="demande-devis.html" class="active" aria-current="page">Demande de devis</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="burger" aria-label="Ouvrir le menu" role="button" tabindex="0" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- HEADER / HERO spécifique -->
+  <header class="hero">
+    <div class="container">
+      <h1>Demande de devis personnalisé</h1>
+      <p>Remplissez le formulaire ci-dessous pour obtenir un devis adapté à vos besoins.</p>
+    </div>
+  </header>
+
+  <!-- FORMULAIRE DE DEMANDE DE DEVIS -->
+  <section class="contact">
+    <div class="container">
+      <h2>Formulaire de demande de devis</h2>
+      <form action="https://formsubmit.co/tonadresse@email.com" method="POST" novalidate>
+        <input type="text" name="name" placeholder="Votre nom complet" required aria-label="Votre nom complet" />
+        <input type="email" name="email" placeholder="Votre e-mail" required aria-label="Votre e-mail" />
+        <input type="tel" name="phone" placeholder="Votre téléphone" aria-label="Votre téléphone" pattern="[\d\s+()-]{6,}" />
+        
+        <label for="service" class="sr-only">Type de service</label>
+        <select name="service" id="service" required aria-required="true" aria-label="Type de service demandé">
+          <option value="" disabled selected>Choisissez un type de service</option>
+          <option value="immeubles-vitrines">Immeubles & Vitrines</option>
+          <option value="particuliers">Particuliers</option>
+          <option value="ecologique">Écologique</option>
+        </select>
+
+        <label for="message" class="sr-only">Détails supplémentaires</label>
+        <textarea name="message" id="message" placeholder="Détails sur votre demande, surface à nettoyer, lieu, etc." aria-label="Détails supplémentaires"></textarea>
+
+        <button type="submit" class="btn">Envoyer ma demande</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER identique -->
+  <footer>
+    <p>&copy; 2025 VitroPro - Tous droits réservés</p>
+  </footer>
+
+  <!-- SCRIPT MENU identique -->
+  <script>
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+      burger.classList.toggle("toggle");
+      const expanded = burger.getAttribute("aria-expanded") === "true";
+      burger.setAttribute("aria-expanded", String(!expanded));
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    burger.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        burger.click();
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -4,22 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VitroPro - Nettoyage de Vitres</title>
+  <meta name="description" content="VitroPro - Nettoyage professionnel de vitres à Laval et alentours. Services pour particuliers et professionnels. Devis rapide et gratuit." />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Ajouter un favicon dans le dossier /images et décommenter la ligne suivante -->
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png" /> -->
 </head>
 <body>
 
   <!-- 🔷 NAVIGATION -->
-  <nav class="navbar">
-    <div class="logo">VitroPro</div>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="logo" aria-current="page">VitroPro</div>
     <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
+      <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
       <li><a href="a-propos.html">À propos</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="demande-devis.html">Demande de devis</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="burger">
+    <div class="burger" aria-label="Ouvrir le menu" role="button" tabindex="0" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
@@ -31,7 +35,7 @@
     <div class="container">
       <h1>VitroPro</h1>
       <p>Le spécialiste du lavage de vitres à Laval et alentours</p>
-      <a href="#contact" class="btn">Demander un devis</a>
+      <a href="demande-devis.html" class="btn">Demander un devis</a>
     </div>
   </header>
 
@@ -41,17 +45,17 @@
       <h2>Nos Services</h2>
       <div class="cards">
         <div class="card">
-          <i class="fas fa-building"></i>
+          <i class="fas fa-building" aria-hidden="true"></i>
           <h3>Immeubles & Vitrines</h3>
           <p>Nettoyage extérieur et intérieur pour commerces, vitrines et bureaux.</p>
         </div>
         <div class="card">
-          <i class="fas fa-home"></i>
+          <i class="fas fa-home" aria-hidden="true"></i>
           <h3>Particuliers</h3>
           <p>Fenêtres, vérandas, baies vitrées : on s’occupe de tout chez vous.</p>
         </div>
         <div class="card">
-          <i class="fas fa-leaf"></i>
+          <i class="fas fa-leaf" aria-hidden="true"></i>
           <h3>Écologique</h3>
           <p>Produits respectueux de l’environnement, sans traces ni odeurs.</p>
         </div>
@@ -64,10 +68,8 @@
     <div class="container">
       <h2>Avant / Après</h2>
       <div class="gallery-grid">
-        <div><img src="images/avant1.jpg" alt="Avant 1" /></div>
-        <div><img src="images/apres1.jpg" alt="Après 1" /></div>
-        <div><img src="images/avant2.jpg" alt="Avant 2" /></div>
-        <div><img src="images/apres2.jpg" alt="Après 2" /></div>
+        <div><img src="images/image_avant_apres1.jpg" alt="Fenêtre avant nettoyage 1" /></div>
+        <div><img src="images/image_avant_apres2.jpg" alt="Fenêtre avant nettoyage 2" /></div>
       </div>
     </div>
   </section>
@@ -77,11 +79,11 @@
     <div class="container">
       <h2>Ils nous font confiance</h2>
       <div class="testimonial-cards">
-        <div class="testimonial">
+        <div class="testimonial" tabindex="0">
           <p>"Travail impeccable, rapide et soigné. Je recommande à 100% !" </p>
           <strong>- M. Dupont</strong>
         </div>
-        <div class="testimonial">
+        <div class="testimonial" tabindex="0">
           <p>"VitroPro a redonné vie à notre façade vitrée, bravo à l’équipe !"</p>
           <strong>- Mme Leclerc</strong>
         </div>
@@ -95,7 +97,7 @@
       <h2>Zone d’intervention</h2>
       <p>Laval, Bonchamp, Saint-Berthevin, Mayenne et alentours.</p>
       <div class="map-container">
-        <iframe src="https://www.google.com/maps?q=laval,france&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps?q=laval,france&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" title="Carte de la zone d'intervention"></iframe>
       </div>
     </div>
   </section>
@@ -104,10 +106,10 @@
   <section class="contact" id="contact">
     <div class="container">
       <h2>Contactez-nous</h2>
-      <form action="https://formsubmit.co/tonadresse@email.com" method="POST">
-        <input type="text" name="name" placeholder="Votre nom" required />
-        <input type="email" name="email" placeholder="Votre e-mail" required />
-        <textarea name="message" placeholder="Votre message" required></textarea>
+      <form action="https://formsubmit.co/tonadresse@email.com" method="POST" novalidate>
+        <input type="text" name="name" placeholder="Votre nom" required aria-label="Votre nom" />
+        <input type="email" name="email" placeholder="Votre e-mail" required aria-label="Votre e-mail" />
+        <textarea name="message" placeholder="Votre message" required aria-label="Votre message"></textarea>
         <button type="submit" class="btn">Envoyer</button>
       </form>
     </div>
@@ -126,6 +128,26 @@
     burger.addEventListener("click", () => {
       nav.classList.toggle("nav-active");
       burger.classList.toggle("toggle");
+      // Gérer aria-expanded pour accessibilité
+      const expanded = burger.getAttribute("aria-expanded") === "true";
+      burger.setAttribute("aria-expanded", String(!expanded));
+    });
+
+    // Fermer le menu quand on clique sur un lien (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Fermer le menu avec la touche Entrée sur burger (accessibilité)
+    burger.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        burger.click();
+      }
     });
   </script>
 
